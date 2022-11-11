@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+  <title>Tarefa 5 - JavaScript</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="http://pluspng.com/img-png/logo-javascript-png-javascript-ile-twitter-retweet-uygulamas-833.png" width="60" height="60" class="d-inline-block align-top" alt="JavaScript" style="margin: 0px 40px 0px 40px;">
+      Exercicio parte 1 - JavaScript
+    </a>
+  </nav>
+
+  <div class="container" style="margin: 40px;">
+    <div class="row">
+      <div class="col-md-12">
+        <p>1) Crie duas variáveis com o valor 10 e 100. Mostre o valor da soma, subtração, divisão e multiplicação em um ALERT.</p>
+        <button onclick="calc()" class="btn btn-sucess" style="border: solid 2px blue;">Calcular</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container" style="margin: 40px;">
+    <div class="row">
+      <div class="col-md-12">
+        <p>2) Crie um loop que mostre na tela o valor de 10 a 100. (Imprimindo no console)</p>
+        <button onclick="loop()" class="btn btn-sucess" style="border: solid 2px blue;">Loop</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container" style="margin: 40px;">
+    <div class="row">
+      <div class="col-md-12">
+        <p>3) Crie uma variável que recebe o valor fixo 5. Mostre a tabuada desse número.</p>
+        <button onclick="tabuada()" class="btn btn-sucess" style="border: solid 2px blue;">Calcular</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin: 40px;">
+    <div class="row">
+      <div class="col-md-12">
+        <p>4) Adapte o exercício anterior para o valor não ser mais fixo. O valor deve ser recebido de um campo da tela.</p>
+        <input id="num" type="number"><br />
+        <button onclick="calcTabuada()" class="btn btn-sucess" style="border: solid 2px blue; margin-top: 5px;">Calcular</button><br>
+        <div id="resp" style='display:inline'></div>
+      </div>
+    </div>
+  </div>
+
+  <form name="calcform" method="post" action="" style="margin: 40px;">
+    <div id="container">
+      <p>5) Fazer um calculadora que receberá dois valores e a operação (+,-,*,/). Ao clicar no botão calcular o resultado é demonstrado.</p>
+      <span>Informe os valores:</span><br>
+      <input type="number" name="valor1" size="10" id="valor1" placeholder="Primeiro valor" style="margin-top: 10px;" /><br>
+      <input type="number" name="valor2" size="10" id="valor2" placeholder="Segundo Valor" style="margin-top: 10px;" /><br><br>
+
+      <label for="calc">Selecione a operação:</label>
+      <select name="calc" id="calc">
+        <option value="somar">Somar</option>
+        <option value="subtrair">Subtrair</option>
+        <option value="multiplicar">Multiplifcar</option>
+        <option value="dividir">Dividir</option>
+      </select><br>
+
+      <label for="resp">Resultado:</label><br>
+      <input type="number" name="resp" id="resp" /><br>
+      <input type="button" value="Calcular" class="botao" onclick="calculadora(document.calcform.calc.value)" style="border: solid 2px blue; margin-top: 5px;" />
+    </div>
+  </form>
+
+
+
+  <div class="container" style="margin: 40px;">
+    <div class="row">
+      <div class="col-md-12">
+        <p>6) Percorra o array [1,2,3,4,5,6,7,8,9,10] e exiba apenas os valores pares. </p>
+        <button onclick="list()" class="btn btn-sucess" style="border: solid 2px blue;">Calcular</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="margin: 40px;">
+    <div class="row">
+      <div class="col-md-12">
+        <p>7) O custo de um carro novo ao consumidor é obtido com a seguinte fórmula:
+          custo final = custo de fábrica + (custo de fábrica * percentual do distribuidor) + (custo de fábrica * percentual de impostos)
+          O usuário terá uma tela para entrar com os valores:
+
+          custo de fábrica => nome do input custoFabrica
+          % distribuidor => nome do input percDistribuidor
+          % impostos => nome do input percImpostos
+          Valor final => nome do input valorfinal </p>
+        <div class="col-md-2">
+          <label>Custo da fabrica: </label>
+          <input type="number" name="custoFabrica" id="custoFabrica" class="form-control">
+        </div>
+        <div class="col-md-2">
+          <label>Preço do Distribuidor: </label>
+          <input type="number" name="percDistribuidor" id="percDistribuidor" class="form-control">
+        </div>
+        <div class="col-md-2">
+          <label>Custo de Impostos: </label>
+          <input type="number" name="percImpostos" id="percImpostos" class="form-control">
+        </div>
+        <div class="col-md-2" style="margin-top: 20px;">
+          <button onclick="btncalcular()" class="btn btn-success">Calcular</button>
+        </div>
+        <div class="col-md-2" style="margin-top: 20px;">
+          <label>Valor final:</label>
+          <input type="number" name="valorfinal" id="valorfinal" class="form-control" disabled>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
